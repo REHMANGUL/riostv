@@ -14,7 +14,7 @@
 		<include>ScrollOffsetLabel</include>
 		<include>Topbar</include>
 		<control type="group">
-			<left>-440</left>
+			<posx>-440</posx>
 			<include>SideBladeLeft</include>
 			<control type="grouplist" id="9050">
 				<include>MediaMenuTop</include>

@@ -3,31 +3,32 @@
 	<include name="WallBackPanel">
 		<control type="image">
 			<description>background image</description>
-			<left>90</left>
-			<top>900</top>
+			<posx>90</posx>
+			<posy>900</posy>
 			<width>1740</width>
 			<height>784</height>
 			<texture border="40">panel_reflect.png</texture>
 		</control>
 		<control type="image">
 			<description>background image</description>
-			<left>90</left>
-			<top>148</top>
+			<posx>90</posx>
+			<posy>148</posy>
 			<width>1740</width>
 			<height>784</height>
 			<texture border="40">listpanel_back.png</texture>
 		</control>
 	</include>
+
 	<!-- Video Wall -->
 	<include name="VideoWall">
 		<control type="group">
 			<visible>Control.IsVisible(500) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>0</top>
+			<posy>0</posy>
 			<include>WallBackPanel</include>
 			<control type="panel" id="500">
-				<left>120</left>
-				<top>179</top>
+				<posx>120</posx>
+				<posy>179</posy>
 				<width>1680</width>
 				<height>720</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -40,8 +41,8 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
@@ -52,8 +53,8 @@
 						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<left>140</left>
-						<top>0</top>
+						<posx>140</posx>
+						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
 						<texture>$VAR[OverlayVar]</texture>
@@ -61,8 +62,8 @@
 						<bordersize>1</bordersize>
 					</control>
 					<control type="group">
-						<left>15</left>
-						<top>15</top>
+						<posx>15</posx>
+						<posy>15</posy>
 						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
 					</control>
 				</itemlayout>
@@ -73,8 +74,8 @@
 							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
 						</animation>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
+							<posx>0</posx>
+							<posy>0</posy>
 							<width>240</width>
 							<height>360</height>
 							<aspectratio>scale</aspectratio>
@@ -84,8 +85,8 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="image">
-							<left>140</left>
-							<top>0</top>
+							<posx>140</posx>
+							<posy>0</posy>
 							<width>100</width>
 							<height>100</height>
 							<texture>$VAR[OverlayVar]</texture>
@@ -93,16 +94,16 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="group">
-							<left>15</left>
-							<top>15</top>
+							<posx>15</posx>
+							<posy>15</posy>
 							<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
 						</control>
 					</control>
 				</focusedlayout>
 				<itemlayout height="360" width="240" condition="Container.Content(genres)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
@@ -120,8 +121,8 @@
 							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
 						</animation>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
+							<posx>0</posx>
+							<posy>0</posy>
 							<width>240</width>
 							<height>360</height>
 							<aspectratio>scale</aspectratio>
@@ -134,8 +135,8 @@
 				</focusedlayout>
 				<itemlayout height="240" width="240" condition="Container.Content(addons)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -148,8 +149,8 @@
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="Container.Content(addons)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -165,8 +166,8 @@
 				</focusedlayout>
 				<itemlayout height="360" width="420" condition="![Container.Content(addons) | Container.Content(genres) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>420</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
@@ -177,8 +178,8 @@
 						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<left>320</left>
-						<top>0</top>
+						<posx>320</posx>
+						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
 						<texture>$VAR[OverlayVar]</texture>
@@ -186,7 +187,7 @@
 						<bordersize>1</bordersize>
 					</control>
 					<control type="image">
-						<top>310</top>
+						<posy>310</posy>
 						<width>420</width>
 						<height>50</height>
 						<texture>black.png</texture>
@@ -194,7 +195,8 @@
 						<colordiffuse>88ffffff</colordiffuse>
 					</control>
 					<control type="label">
-						<top>310</top>
+						<posx>210</posx>
+						<posy>310</posy>
 						<width>420</width>
 						<height>40</height>
 						<align>center</align>
@@ -210,8 +212,8 @@
 							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
 						</animation>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
+							<posx>0</posx>
+							<posy>0</posy>
 							<width>420</width>
 							<height>360</height>
 							<aspectratio>scale</aspectratio>
@@ -221,8 +223,8 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="image">
-							<left>320</left>
-							<top>0</top>
+							<posx>320</posx>
+							<posy>0</posy>
 							<width>100</width>
 							<height>100</height>
 							<texture>$VAR[OverlayVar]</texture>
@@ -230,8 +232,8 @@
 							<bordersize>8</bordersize>
 						</control>
 						<control type="image">
-							<left>6</left>
-							<top>310</top>
+							<posx>6</posx>
+							<posy>310</posy>
 							<width>408</width>
 							<height>44</height>
 							<texture>black.png</texture>
@@ -239,7 +241,8 @@
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>310</top>
+							<posx>210</posx>
+							<posy>310</posy>
 							<width>420</width>
 							<height>40</height>
 							<align>center</align>
@@ -250,8 +253,8 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>1797</left>
-				<top>179</top>
+				<posx>1797</posx>
+				<posy>179</posy>
 				<width>14</width>
 				<height>720</height>
 				<onleft>50</onleft>
@@ -269,8 +272,8 @@
 				<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 				<control type="button">
-					<top>980</top>
-					<left>90</left>
+					<posy>980</posy>
+					<posx>90</posx>
 					<width>1740</width>
 					<height>90</height>
 					<font>font16_title</font>
@@ -289,12 +292,12 @@
 	<include name="MusicWall">
 		<control type="group">
 			<visible>Control.IsVisible(500) + !Window.IsActive(addoninformation)</visible>
-			<top>0</top>
+			<posy>0</posy>
 			<include>ViewAnimation</include>
 			<include>WallBackPanel</include>
 			<control type="panel" id="500">
-				<left>120</left>
-				<top>179</top>
+				<posx>120</posx>
+				<posy>179</posy>
 				<width>1680</width>
 				<height>720</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -306,8 +309,8 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="240" width="240" condition="!Container.Content(genres)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -320,7 +323,7 @@
 					<control type="group">
 						<visible>Container.Content(artists)</visible>
 						<control type="image">
-							<top>190</top>
+							<posy>190</posy>
 							<width>240</width>
 							<height>50</height>
 							<texture>black.png</texture>
@@ -328,7 +331,8 @@
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>200</top>
+							<posx>120</posx>
+							<posy>200</posy>
 							<width>240</width>
 							<height>30</height>
 							<align>center</align>
@@ -340,8 +344,8 @@
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="!Container.Content(genres)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -361,7 +365,7 @@
 							<effect type="slide" start="0,0" end="0,30" time="200" tween="sine" easing="in" />
 						</animation>
 						<control type="image">
-							<top>190</top>
+							<posy>190</posy>
 							<width>240</width>
 							<height>50</height>
 							<texture>black.png</texture>
@@ -369,7 +373,8 @@
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>200</top>
+							<posx>120</posx>
+							<posy>200</posy>
 							<width>240</width>
 							<height>30</height>
 							<align>center</align>
@@ -381,8 +386,8 @@
 				</focusedlayout>
 				<itemlayout height="240" width="240" condition="Container.Content(genres)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -395,8 +400,8 @@
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="Container.Content(genres)">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -412,8 +417,8 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>1801</left>
-				<top>179</top>
+				<posx>1801</posx>
+				<posy>179</posy>
 				<width>8</width>
 				<height>720</height>
 				<onleft>50</onleft>
@@ -434,11 +439,11 @@
 		<control type="group">
 			<visible>Control.IsVisible(500) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>0</top>
+			<posy>0</posy>
 			<include>WallBackPanel</include>
 			<control type="panel" id="500">
-				<left>120</left>
-				<top>179</top>
+				<posx>120</posx>
+				<posy>179</posy>
 				<width>1680</width>
 				<height>720</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -450,8 +455,8 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="240" width="240">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -462,8 +467,8 @@
 						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<left>140</left>
-						<top>0</top>
+						<posx>140</posx>
+						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
 						<texture>overlays/addons/enabled.png</texture>
@@ -474,8 +479,8 @@
 				</itemlayout>
 				<focusedlayout height="240" width="240">
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
@@ -489,8 +494,8 @@
 						</animation>
 					</control>
 					<control type="image">
-						<left>140</left>
-						<top>0</top>
+						<posx>140</posx>
+						<posy>0</posy>
 						<width>100</width>
 						<height>100</height>
 						<texture>overlays/addons/enabled.png</texture>
@@ -505,8 +510,8 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>1801</left>
-				<top>179</top>
+				<posx>1801</posx>
+				<posy>179</posy>
 				<width>8</width>
 				<height>720</height>
 				<onleft>50</onleft>
@@ -527,26 +532,26 @@
 		<control type="group">
 			<visible>Control.IsVisible(510) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
-			<top>-85</top>
+			<posy>-85</posy>
 			<control type="image">
 				<description>background image</description>
-				<left>90</left>
-				<top>1080</top>
+				<posx>90</posx>
+				<posy>1080</posy>
 				<width>1740</width>
 				<height>964</height>
 				<texture border="40">panel_reflect.png</texture>
 			</control>
 			<control type="image">
 				<description>background image</description>
-				<left>90</left>
-				<top>148</top>
+				<posx>90</posx>
+				<posy>148</posy>
 				<width>1740</width>
 				<height>964</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
 			<control type="panel" id="510">
-				<left>120</left>
-				<top>179</top>
+				<posx>120</posx>
+				<posy>179</posy>
 				<width>1680</width>
 				<height>900</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -568,7 +573,7 @@
 						<bordersize>2</bordersize>
 					</control>
 					<control type="image">
-						<top>250</top>
+						<posy>250</posy>
 						<width>560</width>
 						<height>50</height>
 						<texture>black.png</texture>
@@ -576,7 +581,7 @@
 						<colordiffuse>88ffffff</colordiffuse>
 					</control>
 					<control type="label">
-						<top>260</top>
+						<posy>260</posy>
 						<width>560</width>
 						<height>30</height>
 						<textoffsetx>15</textoffsetx>
@@ -584,8 +589,9 @@
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<top>260</top>
-						<width>560</width>
+						<posx>560</posx>
+						<posy>260</posy>
+						<width>240</width>
 						<height>30</height>
 						<align>right</align>
 						<textoffsetx>15</textoffsetx>
@@ -613,7 +619,7 @@
 							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
 						</animation>
 						<control type="image">
-							<top>250</top>
+							<posy>250</posy>
 							<width>560</width>
 							<height>50</height>
 							<texture>black.png</texture>
@@ -621,7 +627,7 @@
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>260</top>
+							<posy>260</posy>
 							<width>560</width>
 							<height>30</height>
 							<textoffsetx>15</textoffsetx>
@@ -629,8 +635,9 @@
 							<info>ListItem.Label</info>
 						</control>
 						<control type="label">
-							<top>260</top>
-							<width>560</width>
+							<posx>560</posx>
+							<posy>260</posy>
+							<width>240</width>
 							<height>30</height>
 							<align>right</align>
 							<textoffsetx>15</textoffsetx>
@@ -641,8 +648,8 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>1797</left>
-				<top>179</top>
+				<posx>1797</posx>
+				<posy>179</posy>
 				<width>14</width>
 				<height>720</height>
 				<onleft>50</onleft>
@@ -658,4 +665,5 @@
 			</control>
 		</control>
 	</include>
+
 </includes>

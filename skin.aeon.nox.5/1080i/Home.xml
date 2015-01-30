@@ -2,15 +2,18 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(Window.HasSettings,True,home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x101|x202|x303|x404|x50​5|x606)</onload>
+	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<controls>
 		<include>CommonBackground</include>
 		<include condition="!Skin.HasSetting(Disable.Videoinfo)">NowPlayingVideoWidget</include>
 		<include condition="!Skin.HasSetting(Disable.Musicinfo)">NowPlayingMusicWidget</include>
 		<include>HomeRecentlyAddedInfo</include>
 		<include>WeatherWidget</include>
+
 		<control type="group">
-			<top>424</top>
+			<posy>424</posy>
 			<control type="group">
 				<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 				<animation effect="slide" end="-1870,0" time="240">WindowClose</animation>
@@ -23,15 +26,14 @@
 					<texture flipy="true">submenu_bar.png</texture>
 				</control>
 				<control type="image">
-					<left>1780</left>
+					<posx>1780</posx>
 					<width>90</width>
 					<height>87</height>
 					<texture flipx="true" flipy="true">submenu_end.png</texture>
 				</control>
-				<include condition="System.HasAddon(service.library.data.provider)">PlayListStatsList</include>
 				<control type="label">
-					<left>0</left>
-					<top>46</top>
+					<posx>0</posx>
+					<posy>46</posy>
 					<width>1780</width>
 					<height>40</height>
 					<label>$VAR[LibraryStatsVar]</label>
@@ -41,8 +43,8 @@
 					<shadowcolor>shadow</shadowcolor>
 				</control>
 				<control type="grouplist" id="9020">
-					<left>0</left>
-					<top>46</top>
+					<posx>0</posx>
+					<posy>46</posy>
 					<width>1790</width>
 					<height>41</height>
 					<align>right</align>
@@ -50,7 +52,26 @@
 					<onup condition="Control.IsVisible(9003)">9003</onup>
 					<onup condition="!Control.IsVisible(9003)">9000</onup>
 					<ondown>9000</ondown>
-					<include condition="System.HasAddon(script.globalsearch)">HomeSearchButton</include>
+					<control type="button" id="9027">
+						<label></label>
+						<textoffsetx>0</textoffsetx>
+						<width>50</width>
+						<height>41</height>
+						<align>center</align>
+						<font>IconTiny</font>
+						<textcolor>grey</textcolor>
+						<shadowcolor>shadow</shadowcolor>
+						<visible>System.HasAddon(script.globalsearch)</visible>
+						<onclick>RunAddon(script.globalsearch)</onclick>
+						<animation type="Visible">
+							<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="300" />
+							<effect type="zoom" start="50" end="100" center="auto" tween="sine" easing="inout" time="300" />
+						</animation>
+						<animation type="Hidden">
+							<effect type="fade" start="100" end="0" tween="sine" easing="inout" time="300" />
+							<effect type="zoom" start="100" end="50" center="auto" tween="sine" easing="inout" time="300" />
+						</animation>
+					</control>
 					<control type="button" id="9021">
 						<label></label>
 						<textoffsetx>0</textoffsetx>
@@ -118,45 +139,44 @@
 				</control>
 			</control>
 		</control>
+
 		<include condition="system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Detach.RSS)">RSSFeedWidget</include>
 		<include condition="system.getbool(lookandfeel.enablerssfeeds) + !Skin.HasSetting(Detach.RSS)">RSSFeedWidget2</include>
+
 		<control type="group">
-			<top>453</top>
+			<posy>453</posy>
 			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
-				<effect type="zoom" start="0" end="100" center="960,540" delay="500" time="300" tween="cubic" />
-			</animation>
-			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(Startup)">
-				<effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" />
-				<effect type="fade" start="50" end="100" time="300" />
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
-				<effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
 			</animation>
 			<control type="group" id="9001">
-				<left>0</left>
-				<top>159</top>
+				<posx>0</posx>
+				<posy>159</posy>
 				<onup>9000</onup>
 				<ondown>9002</ondown>
 				<include condition="system.getbool(lookandfeel.enablerssfeeds)">SubMenuAnimation</include>
-				<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-				<animation effect="slide" start="1870,0" end="0,0" delay="200" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
+				<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!window.previous(startup)">WindowOpen</animation>
+				<animation effect="slide" start="1870,0" end="0,0" delay="800" time="480" condition="window.previous(startup)">WindowOpen</animation>
 				<control type="image" id="90101">
-					<left>50</left>
+					<posx>50</posx>
 					<width>90</width>
 					<height>87</height>
 					<texture>submenu_end.png</texture>
 				</control>
 				<control type="image">
-					<left>140</left>
+					<posx>140</posx>
 					<width>1780</width>
 					<height>87</height>
 					<texture>submenu_bar.png</texture>
 				</control>
 				<control type="fixedlist" id="9010">
-					<left>210</left>
-					<top>0</top>
+					<posx>210</posx>
+					<posy>0</posy>
 					<width>1500</width>
 					<height>87</height>
 					<align>center</align>
@@ -169,6 +189,8 @@
 					<orientation>Horizontal</orientation>
 					<itemlayout height="87" width="300">
 						<control type="label">
+							<posx>150</posx>
+							<posy>0</posy>
 							<width>300</width>
 							<height>41</height>
 							<font>font13_title</font>
@@ -183,11 +205,14 @@
 						<control type="group">
 							<visible>Control.HasFocus(9010)</visible>
 							<control type="image">
+								<posy>0</posy>
 								<width>300</width>
 								<height>41</height>
 								<texture>listselect_fo.png</texture>
 							</control>
 							<control type="label">
+								<posx>150</posx>
+								<posy>0</posy>
 								<width>300</width>
 								<height>41</height>
 								<font>font13_title</font>
@@ -200,6 +225,8 @@
 						<control type="group">
 							<visible>!Control.HasFocus(9010)</visible>
 							<control type="label">
+								<posx>150</posx>
+								<posy>0</posy>
 								<width>300</width>
 								<height>41</height>
 								<font>font13_title</font>
@@ -215,8 +242,8 @@
 					<include condition="System.HasAddon(script.skinshortcuts)">CustomSubMenu</include>
 				</control>
 				<control type="button">
-					<left>130</left>
-					<top>6</top>
+					<posx>130</posx>
+					<posy>6</posy>
 					<width>30</width>
 					<height>30</height>
 					<texturefocus flipx="true" colordiffuse="white">arrowright.png</texturefocus>
@@ -225,8 +252,8 @@
 					<onclick>Control.Move(9010,-1)</onclick>
 				</control>
 				<control type="button">
-					<left>1800</left>
-					<top>6</top>
+					<posx>1800</posx>
+					<posy>6</posy>
 					<width>30</width>
 					<height>30</height>
 					<texturefocus colordiffuse="white">arrowright.png</texturefocus>
@@ -236,18 +263,20 @@
 				</control>
 			</control>
 			<control type="image">
-				<top>0</top>
+				<posy>0</posy>
 				<width>1920</width>
 				<height>225</height>
 				<texture>homemenu_back.png</texture>
 			</control>
+
 			<!-- Main Menu (Includes_Home.xml) -->
 			<include condition="Skin.HasSetting(HorizontalListNav)">MainMenuListFixed</include>
 			<include condition="!Skin.HasSetting(HorizontalListNav)">MainMenuListWrapped</include>
+
 			<!--<control type="group">
 				<visible>IsEmpty(Container(9000).ListItem.Label)</visible>
-				<left>912</left>
-				<top>64</top>
+				<posx>912</posx>
+				<posy>64</posy>
 				<control type="image">
 					<description>Busy animation</description>
 					<width>96</width>
@@ -266,8 +295,8 @@
 				</control>
 			</control>-->
 			<control type="label">
-				<left>0</left>
-				<top>17</top>
+				<posx>0</posx>
+				<posy>17</posy>
 				<width>1920</width>
 				<height>41</height>
 				<font>font13_title</font>
@@ -278,25 +307,26 @@
 				<visible>Skin.HasSetting(mainmenuicons)</visible>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>58</top>
+				<posx>0</posx>
+				<posy>58</posy>
 				<width>100</width>
 				<height>104</height>
 				<texture border="1">side_fade.png</texture>
 			</control>
 			<control type="image">
-				<left>1820</left>
-				<top>58</top>
+				<posx>1820</posx>
+				<posy>58</posy>
 				<width>100</width>
 				<height>104</height>
 				<texture flipx="true" border="1">side_fade.png</texture>
 			</control>
 			<control type="image">
-				<top>90</top>
+				<posy>90</posy>
 				<width>1920</width>
 				<height>72</height>
 				<texture border="1">gradient_floor.png</texture>
 			</control>
 		</control>
+
 	</controls>
 </window>

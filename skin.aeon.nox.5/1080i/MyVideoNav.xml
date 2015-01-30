@@ -16,9 +16,10 @@
 			<include condition="!IsEmpty(Skin.String(InfoPanel.Delay))">InfoPanelDelayAnimation</include>
 		</control>
 		<include>CommonBackground</include>
+
 		<control type="group">
 			<visible>Control.IsVisible(52) | Control.IsVisible(53)</visible>
-			<top>-30</top>
+			<posy>-30</posy>
 			<!--<animation type="VisibleChange" reversible="false">
 				<effect type="zoom" start="200" end="100" center="960,540" easing="out" tween="cubic" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -59,13 +60,13 @@
 			<visible>!Window.IsActive(addoninformation)</visible>
 			<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 			<include>Window_OpenClose_Animation</include>
-			<top>-30</top>
+			<posy>-30</posy>
 			<control type="group">
 				<visible>Control.IsVisible(52) | Control.IsVisible(53)</visible>
 				<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 				<control type="grouplist">
-					<left>300</left>
-					<top>1010</top>
+					<posx>300</posx>
+					<posy>1010</posy>
 					<width>1320</width>
 					<height>42</height>
 					<align>center</align>
@@ -92,11 +93,11 @@
 					</control>
 				</control>
 				<control type="group">
-					<left>300</left>
-					<top>1010</top>
+					<posx>300</posx>
+					<posy>1010</posy>
 					<control type="label">
-						<left>0</left>
-						<top>45</top>
+						<posx>0</posx>
+						<posy>45</posy>
 						<width>1320</width>
 						<height>30</height>
 						<align>center</align>
@@ -107,13 +108,13 @@
 					</control>
 				</control>
 				<control type="group">
-					<left>0</left>
-					<top>1010</top>
+					<posx>0</posx>
+					<posy>1010</posy>
 					<width>1920</width>
 					<align>center</align>
 					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 					<control type="group">
-						<left>120</left>
+						<posx>120</posx>
 						<control type="image" id="800011">
 							<colordiffuse>white</colordiffuse>
 							<include>MediaFlagVars</include>
@@ -121,7 +122,7 @@
 							<texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 						</control>
 						<control type="label">
-							<left>-10</left>
+							<posx>-10</posx>
 							<width>155</width>
 							<height>90</height>
 							<align>center</align>
@@ -133,21 +134,21 @@
 						</control>
 					</control>
 					<!--<control type="image">
-						<left>1470</left>
+						<posx>1470</posx>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
-						<left>1675</left>
+						<posx>1675</posx>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
 						<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 					</control>-->
 					<control type="image">
-						<left>1675</left>
+						<posx>1675</posx>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
@@ -155,19 +156,19 @@
 					</control>
 				</control>
 				<control type="group">
-					<left>0</left>
-					<top>1010</top>
+					<posx>0</posx>
+					<posy>1010</posy>
 					<width>1920</width>
 					<align>center</align>
 					<visible>Container.Content(musicvideos)</visible>
 					<control type="image">
-						<left>120</left>
+						<posx>120</posx>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 					</control>
 					<control type="image">
-						<left>1675</left>
+						<posx>1675</posx>
 						<colordiffuse>white</colordiffuse>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
@@ -183,13 +184,13 @@
 				<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				<control type="group">
-					<left>90</left>
-					<top>1010</top>
+					<posx>90</posx>
+					<posy>1010</posy>
 					<visible>![Control.IsVisible(56) | Control.IsVisible(55)]</visible>
 					<include>VisibleFadeEffect</include>
 					<!--<control type="grouplist">
-						<left>30</left>
-						<top>0</top>
+						<posx>30</posx>
+						<posy>0</posy>
 						<width>1150</width>
 						<height>42</height>
 						<align>left</align>
@@ -216,8 +217,8 @@
 						</control>
 					</control>-->
 					<control type="label">
-						<left>0</left>
-						<top>0</top>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>1150</width>
 						<height>42</height>
 						<aligny>top</aligny>
@@ -230,8 +231,8 @@
 						<textoffsetx>30</textoffsetx>
 					</control>
 					<control type="label">
-						<left>0</left>
-						<top>45</top>
+						<posx>0</posx>
+						<posy>45</posy>
 						<width>1100</width>
 						<height>30</height>
 						<align>left</align>
@@ -242,15 +243,15 @@
 					</control>
 				</control>
 				<control type="group">
-					<left>1444</left>
-					<top>1000</top>
+					<posx>1444</posx>
+					<posy>1000</posy>
 					<width>1840</width>
 					<height>90</height>
 					<orientation>horizontal</orientation>
 					<include>VisibleFadeEffect</include>
 					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
 					<control type="image" id="800012">
-						<left>32</left>
+						<posx>32</posx>
 						<width>198</width>
 						<include>MediaFlagVars</include>
 						<bordersize>2</bordersize>
@@ -258,7 +259,7 @@
 						<visible>!IsEmpty(Control.GetLabel(800012))</visible>
 					</control>
 					<control type="label">
-						<left>32</left>
+						<posx>32</posx>
 						<width>198</width>
 						<height>90</height>
 						<align>center</align>
@@ -269,58 +270,58 @@
 						<visible>IsEmpty(Control.GetLabel(800012))</visible>
 					</control>
 					<control type="image">
-						<left>230</left>
+						<posx>230</posx>
 						<include>MediaFlagVars</include>
 						<texture fallback="flags/mpaa/NR.png">$VAR[RatingFlagVar]</texture>
 					</control>
 				</control>
 				<control type="group">
-					<left>1246</left>
-					<top>1000</top>
+					<posx>1246</posx>
+					<posy>1000</posy>
 					<width>1840</width>
 					<height>90</height>
 					<include>VisibleFadeEffect</include>
 					<visible>![Container.Content(tvshows) | Container.Content(seasons) | Control.IsVisible(55)]</visible>
 					<control type="image">
-						<left>32</left>
+						<posx>32</posx>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
 						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="image">
-						<left>230</left>
+						<posx>230</posx>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
-						<left>428</left>
+						<posx>428</posx>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
 						<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 					</control>
 				</control>
 				<control type="group">
-					<left>1330</left>
-					<top>1000</top>
+					<posx>1330</posx>
+					<posy>1000</posy>
 					<width>1815</width>
 					<height>90</height>
 					<include>VisibleFadeEffect</include>
 					<visible>![Container.Content(tvshows) | Container.Content(seasons)] + Control.IsVisible(55)</visible>
 					<control type="image">
-						<left>0</left>
+						<posx>0</posx>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
 						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="image">
-						<left>175</left>
+						<posx>175</posx>
 						<include>MediaFlagVars</include>
 						<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
-						<left>350</left>
+						<posx>350</posx>
 						<include>MediaFlagVars</include>
 						<texture>$VAR[SourceFlagVar,flags/video/,.png]</texture>
 						<visible>!IsEmpty(ListItem.VideoCodec)</visible>
@@ -328,8 +329,8 @@
 				</control>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>970</top>
+				<posx>0</posx>
+				<posy>970</posy>
 				<width>1920</width>
 				<height>140</height>
 				<texture border="1">gradient_floor.png</texture>
@@ -338,8 +339,9 @@
 		</control>
 		<include>ScrollOffsetLabel</include>
 		<include>Topbar</include>
+
 		<control type="group">
-			<left>-440</left>
+			<posx>-440</posx>
 			<include>SideBladeLeft</include>
 			<control type="grouplist" id="9050">
 				<include>MediaMenuTop</include>

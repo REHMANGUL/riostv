@@ -4,28 +4,28 @@
 	<include>dialogeffect</include>
 	<coordinates>
 		<system>1</system>
-		<left>457</left>
-		<top>240</top>
+		<posx>457</posx>
+		<posy>240</posy>
 	</coordinates>
 	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
-			<left>0</left>
-			<top>0</top>
+			<posx>0</posx>
+			<posy>0</posy>
 			<width>1006</width>
 			<height>600</height>
 			<texture border="40">dialogs/default/bg.png</texture>
 		</control>
 		<control type="image">
-			<left>30</left>
-			<top>86</top>
+			<posx>30</posx>
+			<posy>86</posy>
 			<width>946</width>
 			<height>482</height>
 			<texture border="5">dialogs/default/inner.png</texture>
 		</control>
 		<control type="label">
-			<left>30</left>
-			<top>32</top>
+			<posx>30</posx>
+			<posy>32</posy>
 			<width>940</width>
 			<height>40</height>
 			<font>font15_title</font>
@@ -35,8 +35,8 @@
 			<font>font15_title</font>
 		</control>
 		<control type="list" id="450">
-			<left>32</left>
-			<top>88</top>
+			<posx>32</posx>
+			<posy>88</posy>
 			<width>946</width>
 			<height>480</height>
 			<onup>450</onup>
@@ -47,7 +47,7 @@
 			<scrolltime tween="quadratic" easing="out">200</scrolltime>
 			<itemlayout height="60" width="942">
 				<control type="image">
-					<left>1</left>
+					<posx>1</posx>
 					<width>942</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
@@ -64,6 +64,7 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="label">
+					<posx>942</posx>
 					<width>942</width>
 					<height>60</height>
 					<font>font14</font>
@@ -76,13 +77,13 @@
 			</itemlayout>
 			<focusedlayout height="60" width="942">
 				<control type="image">
-					<left>1</left>
+					<posx>1</posx>
 					<width>942</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="image">
-					<left>1</left>
+					<posx>1</posx>
 					<width>942</width>
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
@@ -102,6 +103,7 @@
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(450)">Conditional</animation>
 				</control>
 				<control type="label">
+					<posx>942</posx>
 					<width>942</width>
 					<height>60</height>
 					<font>font14</font>

@@ -2,8 +2,8 @@
 <includes>
 	<!-- Main Menu Includes -->
 	<include name="MainMenuListContent">
-		<left>-290</left>
-		<top>62</top>
+		<posx>-290</posx>
+		<posy>62</posy>
 		<width>2800</width>
 		<height>100</height>
 		<onleft>9000</onleft>
@@ -23,6 +23,8 @@
 		<animation effect="slide" start="0" end="126,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(mainmenuicons)">Conditional</animation>
 		<itemlayout height="100" width="500" condition="![Skin.HasSetting(biggergap) | Skin.HasSetting(mainmenuicons)]">
 			<control type="label">
+				<posx>250</posx>
+				<posy>0</posy>
 				<width>500</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -34,6 +36,8 @@
 		</itemlayout>
 		<focusedlayout height="100" width="500" condition="![Skin.HasSetting(biggergap) | Skin.HasSetting(mainmenuicons)]">
 			<control type="label">
+				<posx>250</posx>
+				<posy>0</posy>
 				<width>500</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -43,6 +47,8 @@
 				<label>$INFO[ListItem.Label]</label>
 			</control>
 			<control type="label">
+				<posx>250</posx>
+				<posy>0</posy>
 				<width>500</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -56,6 +62,8 @@
 		</focusedlayout>
 		<itemlayout height="100" width="640" condition="Skin.HasSetting(biggergap)">
 			<control type="label">
+				<posx>320</posx>
+				<posy>0</posy>
 				<width>640</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -67,6 +75,8 @@
 		</itemlayout>
 		<focusedlayout height="100" width="640" condition="Skin.HasSetting(biggergap)">
 			<control type="label">
+				<posx>320</posx>
+				<posy>0</posy>
 				<width>640</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -76,6 +86,8 @@
 				<label>$INFO[ListItem.Label]</label>
 			</control>
 			<control type="label">
+				<posx>320</posx>
+				<posy>0</posy>
 				<width>640</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
@@ -89,24 +101,24 @@
 		</focusedlayout>
 		<itemlayout height="100" width="250" condition="Skin.HasSetting(mainmenuicons)">
 			<control type="image">
-				<left>72</left>
-				<top>-2</top>
+				<posx>72</posx>
+				<posy>-2</posy>
 				<width>105</width>
 				<height>105</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 				<colordiffuse>grey3</colordiffuse>
 			</control>
 			<!--<control type="image">
-				<left>89</left>
-				<top>-16</top>
+				<posx>89</posx>
+				<posy>-16</posy>
 				<width>88</width>
 				<height>88</height>
 				<texture background="true">$INFO[ListItem.Property(Icon)]</texture>
 				<colordiffuse>grey3</colordiffuse>
 			</control>
 			<control type="label">
-				<left>133</left>
-				<top>50</top>
+				<posx>133</posx>
+				<posy>50</posy>
 				<width>266</width>
 				<height>40</height>
 				<font>font13_title</font>
@@ -118,22 +130,22 @@
 		</itemlayout>
 		<focusedlayout height="100" width="250" condition="Skin.HasSetting(mainmenuicons)">
 			<control type="image">
-				<left>72</left>
-				<top>-2</top>
+				<posx>72</posx>
+				<posy>-2</posy>
 				<width>105</width>
 				<height>105</height>
 				<texture background="true">$INFO[ListItem.ActualIcon]</texture>
 			</control>
 			<!--<control type="image">
-				<left>89</left>
-				<top>-16</top>
+				<posx>89</posx>
+				<posy>-16</posy>
 				<width>88</width>
 				<height>88</height>
 				<texture background="true">$INFO[ListItem.Property(Icon)]</texture>
 			</control>
 			<control type="label">
-				<left>133</left>
-				<top>50</top>
+				<posx>133</posx>
+				<posy>50</posy>
 				<width>266</width>
 				<height>40</height>
 				<font>font13_title</font>
@@ -143,8 +155,8 @@
 				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 			</control>
 			<control type="label">
-				<left>133</left>
-				<top>50</top>
+				<posx>133</posx>
+				<posy>50</posy>
 				<width>266</width>
 				<height>40</height>
 				<font>font13_title</font>
@@ -168,12 +180,14 @@
 			<include>MainMenuListContent</include>
 		</control>
 	</include>
+
 	<include name="FocusPosition4">
 		<focusposition>4</focusposition>
 	</include>
 	<include name="FocusPosition2">
 		<focusposition>2</focusposition>
 	</include>
+
 	<!--Main Menu-->
 	<include name="PicturesMainMenu">
 		<item id="4">
@@ -249,7 +263,7 @@
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultAddonPVRClient.png">$INFO[Skin.String(LiveTVHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(LiveTVHomeItem.MultiFanart)]</thumb>
-			<property name="Path" fallback="ActivateWindow(TVChannels)">$INFO[Skin.String(LiveTVHomeItem.Path)]</property>
+			<property name="Path" fallback="ActivateWindow(PVR)">$INFO[Skin.String(LiveTVHomeItem.Path)]</property>
 			<property name="Item">LiveTV</property>
 			<property name="BGType">$INFO[Skin.String(LiveTVHomeItem.BGType)]</property>
 			<property name="Widget">$INFO[Skin.String(LiveTVHomeItem.Widget)]</property>
@@ -481,6 +495,7 @@
 			<property name="Disable">$INFO[Skin.String(Custom6HomeItem.Disable)]</property>
 		</item>
 	</include>
+
 	<include name="FallbackMenu">
 		<content>
 			<include condition="IsEmpty(Skin.String(PicturesHomeItem.Disable))">PicturesMainMenu</include>
@@ -503,6 +518,7 @@
 			<include condition="IsEmpty(Skin.String(MusicVideoHomeItem.Disable))">MusicVideosMainMenu</include>
 		</content>
 	</include>
+
 	<!-- SubMenu -->
 	<include name="HomeSubMenuVideos">
 		<item>
@@ -833,36 +849,36 @@
 	</include>
 	<include name="HomeSubMenuLiveTV">
 		<item>
-			<label>19023</label>
-			<onclick>ActivateWindow(TVChannels)</onclick>
+			<label>19024</label>
+			<onclick>ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
 			<icon>-</icon>
 			<thumb>-</thumb>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
-			<label>19024</label>
-			<onclick>ActivateWindow(RadioChannels)</onclick>
+			<label>19023</label>
+			<onclick>ActivateWindowAndFocus(MyPVR, 33,0, 11,0)</onclick>
 			<icon>-</icon>
 			<thumb>-</thumb>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19069</label>
-			<onclick>ActivateWindow(TVGuide)</onclick>
+			<onclick>ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
 			<icon>-</icon>
 			<thumb>-</thumb>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19163</label>
-			<onclick>ActivateWindow(TVRecordings)</onclick>
+			<onclick>ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
 			<icon>-</icon>
 			<thumb>-</thumb>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19040</label>
-			<onclick>ActivateWindow(TVTimers)</onclick>
+			<onclick>ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
 			<icon>-</icon>
 			<thumb>-</thumb>
 			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
