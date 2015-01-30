@@ -139,6 +139,22 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.aaastream" name=".[COLOR blue]AAA[/COLOR] Live TV" version="1.0.6" provider-name="AAA">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AAA Live TV - downloaded for free from:
+http://aaastream.com</summary>
+    <description lang="en">AAA Live TV - downloaded for free from:
+http://aaastream.com</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.live.streams"
        name="LiveStreams"
        version="1.1.6"
@@ -160,6 +176,22 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.playlistLoader" name="Playlist Loader" version="1.0.6" provider-name="Avigdor">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Playlist Loader - downloaded for free from:
+http://www.hometheater.co.il</summary>
+    <description lang="en">Playlist Loader - downloaded for free from:
+http://www.hometheater.co.il</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.tube8" name="Tube8" version="2.1.6" provider-name="xbmc-adult">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -173,6 +205,20 @@
         <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
         <platform>all</platform>
     </extension>
+</addon>
+
+<addon id="plugin.video.vdubt" name="Vdubt25" version="0.0.4" provider-name="Mikey1234">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Vdubt25</summary>
+    <description lang="en">Watch All Your Favourite Streams From Vdubt25</description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="plugin.video.youtube" name="YouTube" provider-name="TheCollective" version="4.4.8">
